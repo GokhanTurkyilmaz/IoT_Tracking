@@ -22,6 +22,7 @@
     "bootstrap": "^5.0.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
+    "jssha": "^3.2.0",
     "ng-bootstrap": "^1.6.3",
     "ngx-bootstrap": "^7.0.0",
     "rxjs": "~6.6.0",
