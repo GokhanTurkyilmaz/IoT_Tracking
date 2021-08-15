@@ -9,4 +9,7 @@ constructor() { }
 success(message:string){
   alertify.success(message);
 }
+error(message:string){
+  alertify.error(message);
+}
 }

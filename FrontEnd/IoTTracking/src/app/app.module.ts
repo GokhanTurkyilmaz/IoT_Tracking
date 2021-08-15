@@ -10,6 +10,22 @@ import { DeviceSettingsComponent } from './deviceSettings/DeviceSettings.compone
 import { PersonsComponent } from './persons/persons.component';
 import { TagsComponent } from './tags/tags.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IMqttServiceOptions,MqttModule, MqttService } from 'ngx-mqtt';
+import { environment  as env } from '../environments/environment.prod';
+
+
+// const MQTT_SERVICE_OPTIONS:IMqttServiceOptions={
+//   hostname:env.mqtt.server,
+//   port:env.mqtt.port,
+//   protocol:(env.mqtt.protocol==="wss") ? "wss":"ws",
+//   path:'',
+
+// }
+export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  hostname: 'test.mosquitto.org',
+  port: 8081,
+  path: '/mqtt'
+};
 
 
 @NgModule({
@@ -18,15 +34,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       NavBarComponent,
       DeviceSettingsComponent,
       PersonsComponent,
-      TagsComponent
+      TagsComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
   ],
-  providers: [],
+  providers: [MqttService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

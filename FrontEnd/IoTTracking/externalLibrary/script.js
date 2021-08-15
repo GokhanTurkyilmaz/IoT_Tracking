@@ -14,8 +14,9 @@ function test(){
 	// redips initialization
 
 }
- 
+
 redips.init = function () {
+	
 	// set reference to the last cell in table
 	lastCell = document.getElementById('lastCell');
 	// initialization
