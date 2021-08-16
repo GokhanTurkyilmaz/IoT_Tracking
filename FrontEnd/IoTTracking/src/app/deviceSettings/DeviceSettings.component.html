@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-4">
     <div class="card border-success mb-4" style="max-width: 28rem;">
       <div class="card-header bg-transparent border-success">Save New Device</div>
@@ -37,4 +37,189 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+	<!-- "position: fixed" fix for Android 2.2+ -->
+
+	<script src="../../../externalLibrary/header.js"></script>
+	<script type="text/javascript" src="../../../externalLibrary/header.js"></script>
+	<script type="text/javascript" src="../../../externalLibrary/redips-drag-min.js"></script>
+	<script type="text/javascript" src="../../../externalLibrary/script.js"></script>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
+
+</head>
+
+<body>
+
+	<!-- drag container -->
+	<div id="redips-drag">
+		<!-- table1 -->
+		<table id="table1">
+			<colgroup>
+				<col width="100" />
+				<col width="100" />
+				<col width="100" />
+			</colgroup>
+			<tbody>
+				<!-- clone 2 elements + last element -->
+				<tr>
+					<td>
+						<div id="a" class="redips-drag orange redips-clone">MFRC</div>
+					</td>
+					<td>
+						<div id="b" class="redips-drag blue redips-clone">UHF</div>
+					</td>
+					<td class="redips-trash">Delete Device</td>
+					<td (click)="openModal()">Device Connection Setting</td>
+
+				</tr>
+			</tbody>
+		</table>
+		<!-- table2 -->
+		<table (click)="myClickFunction($event)" id="table2">
+			<colgroup>
+				<col width="100" />
+				<col width="100" />
+				<col width="100" />
+				<col width="100" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td id="lastCell"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- jQuery dialog -->
+	<ng-template #mymodal let-modal>
+		<div class="modal-header">
+			<h4 class="modal-title" id="modal-basic-title">Connection Setting</h4>
+			<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div>
+							<label for="inputPassword" class="col-sm-3 col-form-label">Device Name</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="deviceName" placeholder="MFRC">
+							</div>
+						</div>
+						<div>
+							<label for="inputPassword" class="col-sm-3 col-form-label">Publish</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="publish" placeholder="BARFAS">
+							</div>
+						</div>
+						<div>
+							<label for="inputPassword" class="col-sm-3 col-form-label">SUBSCRIBE</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="subscribe" placeholder="BARFAS/UHF00001">
+							</div>
+						</div>
+							
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+		</div>
+	</ng-template>
+	<!-- jQuery dialog -->
+	<div id="dialog" title="Choose Action">Please choose action!</div>
+	<!-- instructions -->
+	<div class="instructions">
+
+	</div>
+</body>
+
+</html>
